@@ -16,7 +16,6 @@ export default function Page() {
         </Text>
       </View>
       <Image source={require("@/assets/images/helloapp-logo.webp")} className="  w-72 h-72" />
-
       <BottomLoginSheet />
     </View>
   );

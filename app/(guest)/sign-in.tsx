@@ -2,8 +2,8 @@ import {  useSignIn, useClerk, useAuth  } from "@clerk/clerk-expo";
 import { Link, Stack, useRouter } from "expo-router";
 import { Text, TextInput, Button, View, TouchableOpacity } from "react-native";
 import React from "react";
-import SignInWithOAuth from "@/components/auth/sign-in-0auth";
-import * as Burnt from "burnt";
+import SignInWithOAuth from "@/components/guest/sign-in-0auth";
+import { ALERT_TYPE, Toast } from 'react-native-alert-notification';
 
 export default function Page() {
 
@@ -36,24 +36,23 @@ export default function Page() {
         // See https://clerk.com/docs/custom-flows/error-handling
         // for more info on error handling
 
-        Burnt.toast({
+
+        Toast.show({
+          type: ALERT_TYPE.DANGER,
           title: 'Sign in failed',
-          haptic: 'error',
-          preset: 'error',
-          duration: 5000,
-          from: 'bottom',
-        
+          textBody: 'Please try again',
         });
+
         // console.error(JSON.stringify(signInAttempt, null, 2));
       }
     } catch (err: any) {
-      Burnt.toast({
+
+      Toast.show({
+        type: ALERT_TYPE.DANGER,
         title: 'Sign in failed',
-        haptic: 'none',
-        duration: 2,
-        from: 'bottom',
-      
+        textBody: 'Please try again',
       });
+
       // console.error(JSON.stringify(err, null, 2));
     }
   }, [isLoaded, emailAddress, password]);
@@ -83,7 +82,7 @@ export default function Page() {
       {/* <Button title="Sign In" onPress={onSignInPress} /> */}
 
       <TouchableOpacity className="items-center  border-[3px] rounded-xl border-zinc-500 h-12 justify-center bg-black w-full" onPress={onSignInPress}>
-          <Text className=' text-white text-xl'>Log in</Text>
+          <Text className=' text-white text-xl'>Sign in</Text>
         </TouchableOpacity>
       </View>
       

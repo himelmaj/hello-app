@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import SignInWithOAuth from '../auth/sign-in-0auth';
+import SignInWithOAuth from './sign-in-0auth';
 
 const BottomLoginSheet = () => {
   const { bottom } = useSafeAreaInsets();
@@ -32,7 +32,7 @@ const BottomLoginSheet = () => {
         className='items-center  border-[3px] rounded-xl border-zinc-800 h-12 justify-center'
         asChild>
         <TouchableOpacity>
-          <Text className=' text-white text-xl'>Log in</Text>
+          <Text className=' text-white text-xl'>Sign in</Text>
         </TouchableOpacity>
       </Link>
     </View>
