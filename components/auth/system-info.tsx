@@ -2,40 +2,50 @@ import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import * as Device from 'expo-device';
 import * as FileSystem from 'expo-file-system';
+import DiskUsageBar from './disk-usage-bar';
 
-const bytesToGigabytes = (bytes: number) => {
-    if (bytes === 0) return '0 GB';
-    const gigabytes = bytes / (1024 * 1024 * 1024);
-    return gigabytes.toFixed(2) + ' GB';
+const bytesToGigabytes = (bytes: number): string => {
+  if (bytes === 0) return '0 GB';
+  const gigabytes = bytes / (1024 * 1024 * 1024);
+  return gigabytes.toFixed(2) + ' GB';
 };
 
+const SystemInfo: React.FC = () => {
+  const [totalDisk, setTotalDisk] = useState<number | null>(null);
+  const [freeDisk, setFreeDisk] = useState<number | null>(null);
 
-const SystemInfo = () => {
-    const [disk, setDisk] = useState<any>(null);
-    const [freeDisk, setFreeDisk] = useState<any>(null);
+  useEffect(() => {
+    const fetchDiskInfo = async () => {
+      try {
+        const total = await FileSystem.getTotalDiskCapacityAsync();
+        const free = await FileSystem.getFreeDiskStorageAsync();
+        setTotalDisk(total);
+        setFreeDisk(free);
+      } catch (error) {
+        console.error('Error al obtener la capacidad total del disco:', error);
+        setTotalDisk(null);
+        setFreeDisk(null);
+      }
+    };
 
-    useEffect(() => {
-        const fetchTotalDisk = async () => {
-            const sizeDisk = await FileSystem.getTotalDiskCapacityAsync();
-            const sizeFreeDisk = await FileSystem.getFreeDiskStorageAsync();
-            setDisk(bytesToGigabytes(sizeDisk));
-            setFreeDisk(bytesToGigabytes(sizeFreeDisk));
-        };
+    fetchDiskInfo();
+  }, []);
 
-        fetchTotalDisk();
-    }, []);
-
-
-    return (
-        <View>
-            <Text className="text-2xl font-semibold mb-1">System Info</Text>
-            <Text>Device Name: {Device.deviceName}</Text>
-            <Text>OS Name: {Device.osName}</Text>
-            <Text>OS Version: {Device.osVersion}</Text>
-            <Text>Device Total Disk Capacity: {disk}</Text>
-            <Text>Device Free Disk Storage: {freeDisk}</Text>
-        </View>
-    );
+  return (
+    <View className="my-5 p-3">
+      <Text className="text-2xl font-semibold mb-2">System Info</Text>
+      <Text>Device Name: {Device.deviceName}</Text>
+      <Text>OS Name: {Device.osName}</Text>
+      <Text>OS Version: {Device.osVersion}</Text>
+      {totalDisk !== null && freeDisk !== null && (
+        <>
+          <Text>Device Total Disk Capacity: {bytesToGigabytes(totalDisk)}</Text>
+          <Text>Device Free Disk Storage: {bytesToGigabytes(freeDisk)}</Text>
+          <DiskUsageBar  />
+        </>
+      )}
+    </View>
+  );
 };
 
 export default SystemInfo;

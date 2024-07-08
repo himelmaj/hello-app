@@ -5,6 +5,7 @@ import { useClerk } from "@clerk/clerk-expo";
 import ParallaxScrollView from "@/components/ui/parallax-scroll-view";
 import Folder from "@/components/ui/folder";
 import FoldersList from "@/components/auth/folders-list";
+import DiskUsageBar from "@/components/auth/disk-usage-bar";
 
 
 export default function Page() {
@@ -15,6 +16,10 @@ export default function Page() {
     <ParallaxScrollView>
       <Stack.Screen options={{ headerShown: true, headerTitleAlign: "center" }} />
       <Text className="text-2xl font-semibold">Welcome {user?.fullName}👋</Text>
+
+      <View className="mt-2">
+        <DiskUsageBar />
+      </View>
 
       <View className="mt-4">
         <FoldersList />
