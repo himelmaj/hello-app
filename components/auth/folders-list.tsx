@@ -9,7 +9,7 @@ const FoldersList = () => {
             <Text className="text-2xl font-semibold border-b-2 text-zinc-950 border-zinc-300 pb-2">Folders</Text>
             <AddFolder />
             {folders.map((folder) => (
-                <Folder key={folder} title={`Folder ${folder}`} path={`${folder}`} />
+                <Folder key={folder} title={`Folder ${folder}`} />
             ))}
         </View>
     )
