@@ -4,14 +4,20 @@ import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import SignInWithOAuth from './sign-in-0auth';
+import SignInWithGoogle from './sign-in-google';
+import SignInWithGitHub from './sign-in-github';
+import SignInWithTwitch from './sign-in-twitch';
 
 const BottomLoginSheet = () => {
   const { bottom } = useSafeAreaInsets();
 
   return (
     <View style={[styles.container, { paddingBottom: bottom }]}>
-      <SignInWithOAuth />
+      
+      {/* <SignInWithGoogle /> */}
+      <SignInWithGitHub />
+      <SignInWithTwitch />
+
       <Link
         href={{
           pathname: '/sign-up',

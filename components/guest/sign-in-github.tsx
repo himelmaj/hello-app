@@ -4,9 +4,9 @@ import { Text, View, Button, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
 import { defaultStyles } from '@/constants/Styles';
-import { Link } from "expo-router";
 import { useOAuth } from "@clerk/clerk-expo";
 import * as Linking from "expo-linking"
+
 
 export const useWarmUpBrowser = () => {
   React.useEffect(() => {
@@ -19,19 +19,20 @@ export const useWarmUpBrowser = () => {
 
 WebBrowser.maybeCompleteAuthSession();
 
-const SignInWithOAuth = () => {
+const SignInWithGitHub = () => {
   useWarmUpBrowser();
 
-  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+  const { startOAuthFlow } = useOAuth({ strategy: "oauth_github" });
 
   const onPress = React.useCallback(async () => {
     try {
       const { createdSessionId, signIn, signUp, setActive } =
-        await startOAuthFlow({ redirectUrl: Linking.createURL("/(auth)", { scheme: "helloapp" }) });
+      await startOAuthFlow( {redirectUrl: Linking.createURL("/(auth)", { scheme: "helloapp" })} );
 
       if (createdSessionId) {
         setActive!({ session: createdSessionId });
       } else {
+        
 
       }
     } catch (err) {
@@ -43,8 +44,8 @@ const SignInWithOAuth = () => {
 
 
     <TouchableOpacity style={[defaultStyles.btn, styles.btnDark]} onPress={onPress}>
-      <Ionicons name="logo-google" size={16} style={styles.btnIcon} color={'#fff'} />
-      <Text style={styles.btnDarkText}>Continue with Google</Text>
+      <Ionicons name="logo-github" size={16} style={styles.btnIcon} color={'#fff'} />
+      <Text style={styles.btnDarkText}>Continue with GitHub</Text>
     </TouchableOpacity>
 
   );
@@ -85,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignInWithOAuth;
+export default SignInWithGitHub;
