@@ -9,7 +9,7 @@ export default function SignUpScreen() {
   const [pendingVerification, setPendingVerification] = React.useState(false);
 
   return (
-    <View className="flex-1 justify-center p-5 bg-slate-50">
+    <View className="flex-1 justify-center p-5 bg-white">
       <Stack.Screen options={{ headerShown: true, title: 'Sign Up' }} />
       {!pendingVerification && (
           <CreateUser pendingVerification={pendingVerification} setPendingVerification={setPendingVerification} />
