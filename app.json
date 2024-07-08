@@ -4,7 +4,7 @@
     "slug": "hello-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/hello-app-logo-rounded.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -17,14 +17,15 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/hello-app-logo-rounded.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.roycasso.helloapp"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/hello-app-logo-rounded.png"
     },
     "plugins": [
       "expo-router",
@@ -32,6 +33,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "6ab7c996-69aa-4cfa-b78f-d92480f21853"
+      }
     }
   }
 }

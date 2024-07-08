@@ -3,6 +3,8 @@ import { Link, Stack, router } from "expo-router";
 import { Text, View, Button, TouchableOpacity } from "react-native";
 import { useClerk } from "@clerk/clerk-expo";
 import ParallaxScrollView from "@/components/ui/parallax-scroll-view";
+import Folder from "@/components/ui/folder";
+import FoldersList from "@/components/auth/folders-list";
 
 
 export default function Page() {
@@ -12,7 +14,12 @@ export default function Page() {
   return (
     <ParallaxScrollView>
       <Stack.Screen options={{ headerShown: true, headerTitleAlign: "center" }} />
-      <Text className="text-xl font-semibold">Welcome {user?.fullName}👋</Text>
+      <Text className="text-2xl font-semibold">Welcome {user?.fullName}👋</Text>
+
+      <View className="mt-4">
+        <FoldersList />
+      </View>
+
 
     </ParallaxScrollView>
   );
