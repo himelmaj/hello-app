@@ -39,7 +39,7 @@ function RootLayoutNav() {
     <ClerkProvider tokenCache={tokenCache} publishableKey={publishableKey}>
       <ClerkLoaded>
         <AlertNotificationRoot >
-        <Slot />
+          <Slot />
         </AlertNotificationRoot>
       </ClerkLoaded>
     </ClerkProvider>
