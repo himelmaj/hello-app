@@ -17,10 +17,8 @@
 
 ## Demo Video
 
-  <video controls width="80%">
-    <source src="./assets/screenshots/hello-app.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <img src="./assets/screenshots/hello-app.gif" width="30%">
+
 
 ## 🛠 Technologies Used
 
