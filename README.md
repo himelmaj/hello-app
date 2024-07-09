@@ -1,4 +1,4 @@
-<h1 align="center">Hello App Test</h1>
+<h1 align="center">Hello App</h1>
 
 <h3 align="center">Simple app of Hello App </h3>
 
@@ -6,26 +6,21 @@
 ## 📸 Screenshots
 
 
-<div style="display: flex; flex-direction: 'row';">
-<img src="./assets/screenshots/hello-app-1.png" width=30%>
-<img src="./assets/screenshots/hello-app-2.png" width=30%>
-<img src="./assets/screenshots/hello-app-3.png" width=30%>
-<img src="./assets/screenshots/hello-app-4.png" width=30%>
-<img src="./assets/screenshots/hello-app-5.png" width=30%>
-<img src="./assets/screenshots/hello-app-6.png" width=30%>
-
+<div style="display: flex; flex-direction: row;">
+  <img src="./assets/screenshots/hello-app-1.png" width="30%">
+  <img src="./assets/screenshots/hello-app-2.png" width="30%">
+  <img src="./assets/screenshots/hello-app-3.png" width="30%">
+  <img src="./assets/screenshots/hello-app-4.png" width="30%">
+  <img src="./assets/screenshots/hello-app-5.png" width="30%">
+  <img src="./assets/screenshots/hello-app-6.png" width="30%">
 </div>
 
-## Demo
+## Demo Video
 
-<div style="display: flex; flex-direction: 'row';">
-<video width=30%>
-  <source src="./assets/screenshots/hello-app.mp4" type="video/mp4">
-    <source src="./assets/screenshots/hello-app.mp4" type="video/ogg">
-
-
-</video>
-</div>
+  <video controls width="80%">
+    <source src="./assets/screenshots/hello-app.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
 ## 🛠 Technologies Used
 
@@ -39,12 +34,12 @@
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/himelmaj/hello.app.git
+   git clone https://github.com/himelmaj/hello-app.git
    cd hello.app/
 2. **Install dependencies:**
    ```bash
     EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=changethis
-3. **Update envioments variables:** 
+3. **Update environment variables:** 
    ```bash
     npm install
 4. **Start the development server:**
