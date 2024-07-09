@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+<h1 align="center">Hello App Test</h1>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h3 align="center">Simple app of Hello App </h3>
 
-## Get started
 
-1. Install dependencies
+## 📸 Screenshots
+
+
+<div style="display: flex; flex-direction: 'row';">
+<img src="./assets/screenshots/hello-app-1.png" width=30%>
+<img src="./assets/screenshots/hello-app-2.png" width=30%>
+<img src="./assets/screenshots/hello-app-3.png" width=30%>
+<img src="./assets/screenshots/hello-app-4.png" width=30%>
+<img src="./assets/screenshots/hello-app-5.png" width=30%>
+<img src="./assets/screenshots/hello-app-6.png" width=30%>
+
+</div>
+
+## Demo
+
+<div style="display: flex; flex-direction: 'row';">
+<video width=30%>
+  <source src="./assets/screenshots/hello-app.mp4" type="video/mp4">
+    <source src="./assets/screenshots/hello-app.mp4" type="video/ogg">
+
+
+</video>
+</div>
+
+## 🛠 Technologies Used
+
+- **expo**: Framework for building fast and modern apps
+- **CSS/Tailwind CSS**: For design and layout.
+- **TypeScript**: For functionality and interactivity.
+- **Node.js**: For backend and dependency management.
+
+## 🚀 Getting Started
+
+1. **Clone this repository:**
 
    ```bash
-   npm install
-   ```
-
-2. Start the app
-
+   git clone https://github.com/himelmaj/hello.app.git
+   cd hello.app/
+2. **Install dependencies:**
    ```bash
-    npx expo start
-   ```
+    EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=changethis
+3. **Update envioments variables:** 
+   ```bash
+    npm install
+4. **Start the development server:**
+   ```bash
+    npm start
+## 📝 License
 
-In the output, you'll find options to open the app in a
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Made with ❤️ by Himel Majumder [Get in touch](https://himelmaj.zeabur.app/)
